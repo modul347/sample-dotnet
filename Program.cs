@@ -3,7 +3,7 @@ var app = builder.Build();
 
 app.Urls.Add("http://localhost:5000");
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => "Hello World! 22");
 
 app.MapGet("/{cityName}/weather", GetWeatherByCity);
 
@@ -26,7 +26,7 @@ public record Weather
         City = city;
         Conditions = "Cloudy";
         // Temperature here is in celsius degrees, hence the 0-40 range.
-        Temperature = new Random().Next(0,40).ToString();
+        Temperature = new Random().Next(0, 40).ToString();
     }
 
     public string Conditions { get; set; }
